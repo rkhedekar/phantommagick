@@ -142,8 +142,12 @@ class Runner
                 return false;
             }
         } elseif (Str::contains($uname, 'linux')) {
-            if (! shell_exec(escapeshellcmd("which {$binary}"))) {
-                return false;
+            //if (! shell_exec(escapeshellcmd("which {$binary}"))) {
+            //    return false;
+            //}
+            if (! shell_exec(escapeshellcmd("{$binary}"))) 
+            {  
+                return false; 
             }
         } else {
             throw new \RuntimeException("Unknown operating system.");
